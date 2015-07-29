@@ -15,7 +15,7 @@
 
 ## Usage
 
-> **NOTE:** It really makes most sense to use this plugin with [gulp-if][gi] or in almost all cases.
+> **NOTE:** It really makes most sense to use this plugin with [gulp-if][gi] in almost all cases.
 
 
 #### No Message Given
