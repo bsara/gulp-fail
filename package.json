@@ -1,0 +1,35 @@
+{
+  "name": "gulp-fail",
+  "description": "A gulp plugin which forces a task to fail.",
+  "version": "1.0.0",
+  "license": "MIT",
+  "repository": "bsara/gulp-fail.git",
+  "homepage": "https://github.com/bsara/gulp-fail#readme",
+  "bugs": "https://github.com/bsara/gulp-fail/issues",
+  "author": "Brandon Sara",
+  "keywords": [
+    "gulpplugin",
+    "abort",
+    "kill",
+    "fail",
+    "error",
+    "stop"
+  ],
+  "main": "index.js",
+  "files": [
+    "index.js",
+    "LICENSE",
+    "README.md"
+  ],
+  "dependencies": {
+    "gulp-util": "^3.0.6",
+    "through2": "^2.0.0"
+  },
+  "devDependencies": {
+    "jscs": "latest",
+    "jshint": "latest"
+  },
+  "scripts": {
+    "test": "jshint *.js test/*.js && jscs *.js test/*.js"
+  }
+}
