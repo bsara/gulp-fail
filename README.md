@@ -1,9 +1,6 @@
-# gulp-fail
+# gulp-fail [![NPM Package](https://img.shields.io/npm/v/gulp-fail.svg?style=flat-square)](https://www.npmjs.com/package/gulp-fail) [![Build Status](https://img.shields.io/travis/bsara/gulp-fail.svg?style=flat-square)](https://travis-ci.org/bsara/gulp-fail)
 
 > Forces a gulp task to fail. (Works great with [gulp-if][gi]!)
-
-[![NPM Package](https://img.shields.io/npm/v/gulp-fail.svg?style=flat-square)](https://www.npmjs.com/package/gulp-fail)
-[![Build Status](https://img.shields.io/travis/bsara/gulp-fail.svg?style=flat-square)](https://travis-ci.org/bsara/gulp-fail)
 
 
 
