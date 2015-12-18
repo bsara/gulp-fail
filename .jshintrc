@@ -6,7 +6,7 @@
   "esnext": false,
   "jquery": true,
   "predef": [
-    "module"
+    "module",
     "require"
   ],
 
