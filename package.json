@@ -30,6 +30,6 @@
     "jshint": "latest"
   },
   "scripts": {
-    "test": "jshint *.js test/*.js && jscs *.js test/*.js"
+    "test": "jshint *.js && jscs *.js"
   }
 }

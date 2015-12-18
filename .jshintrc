@@ -1,15 +1,10 @@
 {
   "strict": false,
-
-  "browser": true,
+  "node": true,
+  "browser": false,
   "devel": true,
   "esnext": false,
-  "jquery": true,
-  "predef": [
-    "module",
-    "require"
-  ],
-
+  "jquery": false,
   "debug": false,
   "eqeqeq": true,
   "eqnull": true,
@@ -22,7 +17,6 @@
   "singleGroups": false,
   "undef": true,
   "unused": true,
-
   "laxbreak": true,
   "laxcomma": true,
   "multistr": true,
