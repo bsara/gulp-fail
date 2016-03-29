@@ -88,13 +88,13 @@ gulp.task('lint', function() {
 
   return gulp.src('**/*.js')
              .pipe(jshint())
-             .pipe(jscs()).on('error', function() {}) // noop function
+             .pipe(jscs())
              .pipe(jscsStylish.combineWithHintResults())
              .pipe(jshint.reporter('jshint-stylish'))
-             .pipe(jshint.reporter('fail'))
              .pipe(gulpIf(function(file) {
-               return (file.jscs.errorCount > 0);
-             }, fail("JSCS exited with errors!", true)));
+               return (file.jscs.errorCount > 0
+                        || (file.jshint != null && file.jshint.success));
+             }, fail("Linting finished with errors!", true)));
 })
 ```
 
