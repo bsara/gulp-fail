@@ -93,7 +93,7 @@ gulp.task('lint', function() {
              .pipe(jshint.reporter('jshint-stylish'))
              .pipe(gulpIf(function(file) {
                return ((file.jscs && !file.jscs.success)
-                        || (file.jshint != null && !file.jshint.success));
+                        || (file.jshint && !file.jshint.success));
              }, fail("Linting finished with errors!", true)));
 })
 ```
