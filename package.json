@@ -1,7 +1,7 @@
 {
   "name": "gulp-fail",
   "description": "A gulp plugin which forces a task to fail.",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "license": "MIT",
   "repository": "bsara/gulp-fail.git",
   "homepage": "https://github.com/bsara/gulp-fail#readme",
