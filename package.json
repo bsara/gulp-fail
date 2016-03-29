@@ -1,12 +1,15 @@
 {
   "name": "gulp-fail",
   "description": "A gulp plugin which forces a task to fail.",
-  "version": "1.0.3",
+  "version": "1.0.2",
   "license": "MIT",
   "repository": "bsara/gulp-fail.git",
   "homepage": "https://github.com/bsara/gulp-fail#readme",
   "bugs": "https://github.com/bsara/gulp-fail/issues",
-  "author": "Brandon Sara",
+  "author": "Brandon Sara (http://bsara.github.io)",
+  "contributors": [
+    "Brian Frichette (https://github.com/bfricka)"
+  ],
   "keywords": [
     "gulpplugin",
     "abort",
