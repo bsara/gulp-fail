@@ -92,8 +92,8 @@ gulp.task('lint', function() {
              .pipe(jscsStylish.combineWithHintResults())
              .pipe(jshint.reporter('jshint-stylish'))
              .pipe(gulpIf(function(file) {
-               return (file.jscs.errorCount > 0
-                        || (file.jshint != null && file.jshint.success));
+               return ((file.jscs && !file.jscs.success)
+                        || (file.jshint != null && !file.jshint.success));
              }, fail("Linting finished with errors!", true)));
 })
 ```
