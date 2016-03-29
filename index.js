@@ -34,14 +34,14 @@ function gulpFail(message, failAfterCompletion) {
   if (typeof getMessage !== 'function') {
     getMessage = function() {
       return (message || "Task was forced to fail.");
-    }
+    };
   }
 
   var getError = function() {
-    new PluginError(PLUGIN_NAME, gutil.colors.red(getMessage()), { showStack: false });
-  }
+    return new PluginError(PLUGIN_NAME, gutil.colors.red(getMessage()), { showStack: false });
+  };
 
-  return through.obj(function(file, e, cb) {
+  return through.obj(function(file, _e, cb) {
     if (failAfterCompletion !== true) {
       cb(getError());
       return;
@@ -50,11 +50,11 @@ function gulpFail(message, failAfterCompletion) {
     shouldFail = true;
 
     cb(null, file);
-  }, function(cb) {
+  }, function() {
     if (failAfterCompletion === true && shouldFail) {
-      this.emit('error', new PluginError(PLUGIN_NAME, gutil.colors.red(getMessage()), { showStack: false }));
+      this.emit('error', getError());
     }
-  })
+  });
 }
 
 

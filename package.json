@@ -1,7 +1,7 @@
 {
   "name": "gulp-fail",
   "description": "A gulp plugin which forces a task to fail.",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "license": "MIT",
   "repository": "bsara/gulp-fail.git",
   "homepage": "https://github.com/bsara/gulp-fail#readme",
@@ -30,6 +30,6 @@
     "jshint": "latest"
   },
   "scripts": {
-    "test": "jshint *.js test/*.js && jscs *.js test/*.js"
+    "test": "jshint *.js && jscs *.js"
   }
 }
