@@ -33,6 +33,7 @@ function gulpFail(message, failAfterCompletion) {
   var getMessage = message;
 
 
+
   if (typeof getMessage !== 'function') {
     getMessage = function() {
       return (message || "Task was forced to fail.");
@@ -41,35 +42,35 @@ function gulpFail(message, failAfterCompletion) {
 
 
 
-  function getError() {
+  var getError = function() {
     return new PluginError(PLUGIN_NAME, gutil.colors.red(getMessage()), { showStack: false });
-  }
+  };
 
 
-  function checkFile(file, _e, cb) {
+  var checkFile = function(file, _e, cb) {
     if (failAfterCompletion !== true) {
       cb(getError());
       return;
     }
-
+  
     shouldFail = true;
-
+  
     cb(null, file);
-  }
-
-
-  function checkStream() {
+  };
+  
+  
+  var checkStream = function() {
     if (failAfterCompletion === true && shouldFail) {
       this.emit('error', getError());
       return;
     }
     this.emit('end');
-  }
+  };
 
 
-  function onError() {
+  var onError = function() {
     this.emit('end');
-  }
+  };
 
 
 
