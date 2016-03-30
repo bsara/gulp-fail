@@ -52,13 +52,13 @@ function gulpFail(message, failAfterCompletion) {
       cb(getError());
       return;
     }
-  
+
     shouldFail = true;
-  
+
     cb(null, file);
   };
-  
-  
+
+
   var checkStream = function() {
     if (failAfterCompletion === true && shouldFail) {
       this.emit('error', getError());
