@@ -1,5 +1,5 @@
 /**
- * gulp-fail v1.0.5
+ * gulp-fail v1.0.6
  * Copyright (c) 2016 Brandon Sara (http://bsara.github.io)
  * Licensed under the MIT License
  */
