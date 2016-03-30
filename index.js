@@ -1,6 +1,6 @@
 /**
- * gulp-fail v1.0.0
- * Copyright (c) 2015 Brandon Sara (http://bsara.github.io)
+ * gulp-fail v1.0.5
+ * Copyright (c) 2016 Brandon Sara (http://bsara.github.io)
  * Licensed under the MIT License
  */
 
@@ -28,8 +28,10 @@ var PLUGIN_NAME = 'gulp-fail';
 // -----------------
 
 function gulpFail(message, failAfterCompletion) {
+
   var shouldFail = false;
   var getMessage = message;
+
 
   if (typeof getMessage !== 'function') {
     getMessage = function() {
@@ -37,11 +39,14 @@ function gulpFail(message, failAfterCompletion) {
     };
   }
 
-  var getError = function() {
-    return new PluginError(PLUGIN_NAME, gutil.colors.red(getMessage()), { showStack: false });
-  };
 
-  return through.obj(function(file, _e, cb) {
+
+  function getError() {
+    return new PluginError(PLUGIN_NAME, gutil.colors.red(getMessage()), { showStack: false });
+  }
+
+
+  function checkFile(file, _e, cb) {
     if (failAfterCompletion !== true) {
       cb(getError());
       return;
@@ -50,11 +55,26 @@ function gulpFail(message, failAfterCompletion) {
     shouldFail = true;
 
     cb(null, file);
-  }, function() {
+  }
+
+
+  function checkStream() {
     if (failAfterCompletion === true && shouldFail) {
       this.emit('error', getError());
+      return;
     }
-  });
+    this.emit('end');
+  }
+
+
+  function onError() {
+    this.emit('end');
+  }
+
+
+
+  return through.obj(checkFile, checkStream)
+                .on('error', onError);
 }
 
 
