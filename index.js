@@ -10,11 +10,9 @@
 // Dependencies
 // -----------------
 
-var gutil   = require('gulp-util');
+var PluginError   = require('plugin-error');
+var colors = require('ansi-colors');
 var through = require('through2');
-
-var PluginError = gutil.PluginError;
-
 
 
 // Constants
@@ -43,7 +41,7 @@ function gulpFail(message, failAfterCompletion) {
 
 
   var getError = function() {
-    return new PluginError(PLUGIN_NAME, gutil.colors.red(getMessage()), { showStack: false });
+    return new PluginError(PLUGIN_NAME, colors.red(getMessage()), { showStack: false });
   };
 
 
